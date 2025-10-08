@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>ScholarGuard</title>
+	<style>
+		body{font-family:system-ui, -apple-system, Segoe UI, Roboto; margin:0; padding:12px; min-width:280px; color:#0b1220}
+		.h{display:flex;align-items:center;gap:8px}
+		.badge{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:999px;font-size:12px;border:1px solid #e0e6ff}
+		.dot{width:8px;height:8px;border-radius:50%}
+		.human{background:#eafaf0}.human .dot{background:#2ecc71}
+		.mixed{background:#fff4e3}.mixed .dot{background:#f39c12}
+		.ai{background:#ffeceb}.ai .dot{background:#e74c3c}
+		.hr{height:1px;background:#eef1ff;margin:10px 0}
+		button{background:#2f64ff;color:white;border:none;border-radius:8px;padding:8px 10px;cursor:pointer}
+		.small{color:#657199;font-size:12px}
+		.row{display:flex;align-items:center;gap:8px;justify-content:space-between}
+	</style>
+</head>
+<body>
+	<div class="h"><div>🧠</div><strong>ScholarGuard</strong></div>
+	<div class="small">Separating Human Insight from Machine Output</div>
+	<div class="hr"></div>
+	<div class="row"><span>Open Chatbot</span><button id="open">Open</button></div>
+	<div class="hr"></div>
+	<div class="row"><span>Legend</span>
+		<span>
+			<span class="badge human"><span class="dot"></span> Human</span>
+			<span class="badge mixed"><span class="dot"></span> Mixed</span>
+			<span class="badge ai"><span class="dot"></span> AI</span>
+		</span>
+	</div>
+	<script>
+		document.getElementById('open').addEventListener('click',()=>{
+			chrome.tabs.create({ url: chrome.runtime.getURL('chat.html') });
+		});
+	</script>
+</body>
+</html>

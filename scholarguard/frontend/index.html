@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>ScholarGuard Chatbot</title>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<div class="app">
+		<header class="header">
+			<div class="brand">
+				<span class="logo">🧠</span>
+				<h1>ScholarGuard</h1>
+			</div>
+			<p class="tagline">Separating Human Insight from Machine Output</p>
+		</header>
+
+		<main class="main">
+			<section class="chat">
+				<div class="messages" id="messages"></div>
+				<form id="chat-form" class="chat-form">
+					<input id="topic" type="text" placeholder="Ask: Show me human-written papers on AI ethics" autocomplete="off" />
+					<label class="toggle">
+						<input id="includeMixed" type="checkbox" /> Include Mixed
+					</label>
+					<button type="submit">Search</button>
+				</form>
+			</section>
+
+			<section class="results" id="results"></section>
+		</main>
+
+		<footer class="footer">Made for the ScholarGuard hackathon demo</footer>
+	</div>
+	<script>
+		window.SCHOLAR_GUARD_API = 'http://127.0.0.1:5000';
+	</script>
+	<script src="app.js"></script>
+</body>
+</html>

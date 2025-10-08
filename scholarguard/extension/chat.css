@@ -1,0 +1,32 @@
+:root { --bg:#0b0f1a; --panel:#12182a; --muted:#9fb0d0; --text:#e6eefc; --accent:#6ea8ff; --human:#2ecc71; --mixed:#f39c12; --ai:#e74c3c; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color:var(--text); background:linear-gradient(180deg,#0a0f1c,#0f1527 60%,#0a0f1c); }
+.app { max-width: 960px; margin: 0 auto; padding: 24px; }
+.header { display:flex; flex-direction:column; gap:8px; align-items:flex-start; margin-bottom:16px; }
+.brand { display:flex; align-items:center; gap:10px; }
+.logo { font-size: 28px; }
+.header h1 { margin:0; font-size: 24px; letter-spacing:0.5px; }
+.tagline { margin:0; color:var(--muted); }
+.main { display:grid; grid-template-columns: 1fr; gap:16px; }
+.chat { background:var(--panel); border:1px solid #1e2742; border-radius:12px; padding:16px; }
+.messages { min-height: 80px; max-height: 200px; overflow:auto; padding:8px; background:#0d1330; border-radius:8px; border:1px solid #1e2742; }
+.message { margin-bottom:10px; }
+.message.user { color:var(--accent); }
+.message.bot { color:#b4c8ff; }
+.chat-form { margin-top:12px; display:flex; gap:8px; align-items:center; }
+.chat-form input[type="text"]{ flex:1; padding:10px 12px; border-radius:8px; border:1px solid #2a355c; background:#0b1130; color:var(--text); }
+.chat-form button{ padding:10px 14px; border:none; border-radius:8px; background:var(--accent); color:#071833; font-weight:600; cursor:pointer; }
+.toggle { color:var(--muted); font-size:14px; }
+.results { display:grid; grid-template-columns: 1fr; gap:12px; }
+.paper { background:var(--panel); border:1px solid #1e2742; border-radius:12px; padding:14px; }
+.paper .title { margin:0 0 6px 0; font-size:18px; }
+.meta { color:var(--muted); font-size:14px; margin-bottom:8px; }
+.badge { display:inline-flex; align-items:center; gap:6px; padding:2px 8px; border-radius:999px; font-size:12px; font-weight:600; border:1px solid rgba(255,255,255,0.12); }
+.dot { width:8px; height:8px; border-radius:50%; }
+.badge.human { background: rgba(46,204,113,0.1); color:#c9f7dc; }
+.badge.human .dot{ background: var(--human); }
+.badge.mixed { background: rgba(243,156,18,0.1); color:#ffe7c2; }
+.badge.mixed .dot{ background: var(--mixed); }
+.badge.ai { background: rgba(231,76,60,0.1); color:#ffd6d1; }
+.badge.ai .dot{ background: var(--ai); }
+.footer { margin-top:16px; color:var(--muted); text-align:center; font-size:12px; }
