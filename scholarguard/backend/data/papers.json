@@ -1,0 +1,42 @@
+[
+  {
+    "title": "The Ethics of Artificial Intelligence: Human-Centered Perspectives",
+    "authors": ["J. Alvarez", "K. Chen"],
+    "year": 2021,
+    "summary": "Examines AI ethics frameworks prioritizing human values and accountability.",
+    "keywords": ["AI ethics", "accountability", "human-centered"],
+    "link": "https://scholar.google.com/scholar?q=AI+ethics+human+centered"
+  },
+  {
+    "title": "Prompt Engineering Techniques for Large Language Models",
+    "authors": ["AutoGen"],
+    "year": 2023,
+    "summary": "Survey of LLM prompting strategies and automated pattern discovery.",
+    "keywords": ["prompting", "LLM", "techniques"],
+    "link": "https://scholar.google.com/scholar?q=prompt+engineering+techniques"
+  },
+  {
+    "title": "AI-Assisted Literature Review: A Mixed-Methods Study",
+    "authors": ["S. Iyer", "M. Lopez"],
+    "year": 2022,
+    "summary": "Analyzes workflows where AI supports but does not replace human researchers.",
+    "keywords": ["literature review", "mixed-methods", "AI assistance"],
+    "link": "https://scholar.google.com/scholar?q=AI+assisted+literature+review"
+  },
+  {
+    "title": "Fairness in Machine Learning: A Practical Introduction",
+    "authors": ["D. Patel"],
+    "year": 2020,
+    "summary": "Introduces fairness metrics and mitigation strategies with case studies.",
+    "keywords": ["fairness", "bias", "mitigation"],
+    "link": "https://scholar.google.com/scholar?q=fairness+in+machine+learning+practical+introduction"
+  },
+  {
+    "title": "Human Factors in Data Science Workflows",
+    "authors": ["R. Kim", "T. Singh"],
+    "year": 2019,
+    "summary": "Explores collaboration, documentation, and interpretability in data teams.",
+    "keywords": ["human factors", "data science", "collaboration"],
+    "link": "https://scholar.google.com/scholar?q=human+factors+in+data+science+workflows"
+  }
+]

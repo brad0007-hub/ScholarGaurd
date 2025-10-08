@@ -1,0 +1,20 @@
+[
+  {
+    "title": "The Ethics of Artificial Intelligence: Human-Centered Perspectives",
+    "label": "human",
+    "confidence": 0.92,
+    "explanation": "Peer-reviewed, consistent citations, and human writing style cues."
+  },
+  {
+    "title": "Prompt Engineering Techniques for Large Language Models",
+    "label": "ai",
+    "confidence": 0.88,
+    "explanation": "Metadata and stylistic markers indicate AI-generated drafting."
+  },
+  {
+    "title": "AI-Assisted Literature Review: A Mixed-Methods Study",
+    "label": "mixed",
+    "confidence": 0.8,
+    "explanation": "Authors declare AI assistance in methodology and drafting."
+  }
+]
