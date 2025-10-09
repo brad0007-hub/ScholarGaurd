@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ 'Edit' if subject else 'New' }} Subject</h1>
+<form method="post" class="form">
+  <label>Code
+    <input type="text" name="code" value="{{ subject.code if subject else '' }}" required>
+  </label>
+  <label>Name
+    <input type="text" name="name" value="{{ subject.name if subject else '' }}" required>
+  </label>
+  <button type="submit" class="btn">Save</button>
+  <a class="btn secondary" href="{{ url_for('subjects_list') }}">Cancel</a>
+</form>
+{% endblock %}

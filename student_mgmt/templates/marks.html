@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Marks</h1>
+<form method="get" class="filters">
+  <label>Subject
+    <select name="subject_id" required>
+      <option value="">-- select --</option>
+      {% for sub in subjects %}
+        <option value="{{ sub.id }}" {% if selected_subject_id and sub.id == selected_subject_id|int %}selected{% endif %}>{{ sub.code }} - {{ sub.name }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Exam
+    <input type="text" name="exam" value="{{ selected_exam or '' }}" placeholder="e.g., Midterm" required>
+  </label>
+  <button type="submit" class="btn">Load</button>
+</form>
+
+{% if selected_subject_id and selected_exam %}
+<form method="post">
+  <input type="hidden" name="subject_id" value="{{ selected_subject_id }}">
+  <input type="hidden" name="exam" value="{{ selected_exam }}">
+  <table class="table">
+    <thead>
+      <tr><th>Roll No</th><th>Name</th><th>Marks</th><th>Max Marks</th></tr>
+    </thead>
+    <tbody>
+      {% for s in students %}
+      {% set rec = records.get(s.id) %}
+      <tr>
+        <td>{{ s.roll_no }}</td>
+        <td>{{ s.name }}</td>
+        <td><input type="number" step="0.01" min="0" name="marks_{{ s.id }}" value="{{ rec[0] if rec else '' }}"></td>
+        <td><input type="number" step="0.01" min="1" name="max_marks" value="{{ rec[1] if rec else '' }}"></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <button type="submit" class="btn">Save Marks</button>
+</form>
+
+{% if report %}
+<div class="card">
+  <strong>Average:</strong> {{ '%.2f'|format(report.avg_marks or 0) }} / {{ report.max_marks or '-' }}
+</div>
+{% endif %}
+{% endif %}
+{% endblock %}
