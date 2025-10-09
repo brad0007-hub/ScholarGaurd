@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Attendance</h1>
+<form method="get" class="filters">
+  <label>Subject
+    <select name="subject_id" required>
+      <option value="">-- select --</option>
+      {% for sub in subjects %}
+        <option value="{{ sub.id }}" {% if selected_subject_id and sub.id == selected_subject_id|int %}selected{% endif %}>{{ sub.code }} - {{ sub.name }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Date
+    <input type="date" name="date" value="{{ selected_date or '' }}" required>
+  </label>
+  <button type="submit" class="btn">Load</button>
+</form>
+
+{% if selected_subject_id and selected_date %}
+<form method="post">
+  <input type="hidden" name="subject_id" value="{{ selected_subject_id }}">
+  <input type="hidden" name="date" value="{{ selected_date }}">
+  <table class="table">
+    <thead>
+      <tr><th>Roll No</th><th>Name</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      {% for s in students %}
+      <tr>
+        <td>{{ s.roll_no }}</td>
+        <td>{{ s.name }}</td>
+        <td>
+          <select name="status_{{ s.id }}">
+            {% set st = records.get(s.id, 'Absent') %}
+            <option value="Present" {% if st == 'Present' %}selected{% endif %}>Present</option>
+            <option value="Absent" {% if st == 'Absent' %}selected{% endif %}>Absent</option>
+          </select>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <button type="submit" class="btn">Save Attendance</button>
+</form>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Subjects</h1>
+<a class="btn" href="{{ url_for('subject_new') }}">+ Add Subject</a>
+<table class="table">
+  <thead>
+    <tr><th>Code</th><th>Name</th><th>Actions</th></tr>
+  </thead>
+  <tbody>
+    {% for sub in subjects %}
+    <tr>
+      <td>{{ sub.code }}</td>
+      <td>{{ sub.name }}</td>
+      <td>
+        <a href="{{ url_for('subject_edit', subject_id=sub.id) }}">Edit</a>
+        <form action="{{ url_for('subject_delete', subject_id=sub.id) }}" method="post" style="display:inline" onsubmit="return confirm('Delete subject?')">
+          <button type="submit" class="linklike">Delete</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
